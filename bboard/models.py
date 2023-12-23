@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Post(models.Model):
@@ -31,7 +32,7 @@ class Post(models.Model):
                                   verbose_name='Автор')
     title = models.CharField(max_length=255,
                              verbose_name='Заголовок')
-    content = models.TextField(verbose_name='Cодержание')
+    content = RichTextUploadingField(verbose_name='Cодержание')
     category = models.CharField(max_length=255,
                                 choices=ANN_CATEGORIES,
                                 default='tanks',
