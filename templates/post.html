@@ -1,0 +1,11 @@
+{% extends 'default.html' %}
+
+{% block title %}
+{{post.title}}
+{% endblock title %}
+
+{% block content %}
+    <h1>{{post.title}}</h1>
+    <h3>{{post.time}}</h3>
+    {{post.content}}
+{% endblock content %}
